@@ -11,7 +11,7 @@ class TheCourt {
             currentTab = 0;
         }
 
-        if (currentTab > 50) {
+        if (currentTab >= 50) {
             currentTab = (int) (0.9 * currentTab);
         }
 
