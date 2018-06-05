@@ -1,9 +1,10 @@
 package se.thinkcode;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -16,7 +17,14 @@ public class CourtSteps {
     public void ordered_a_meal_for_(Integer price) {
         currentTab += price;
     }
-    
+
+    @Given("meal orders")
+    public void meal_orders(List<Order> orders) {
+        for (Order order : orders) {
+            currentTab += order.getPrice();
+        }
+    }
+
     @When("{word} swipes her card")
     public void she_swipes_her_card(String guest) {
         court.swipe(guest, currentTab);
