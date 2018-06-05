@@ -1,5 +1,6 @@
 package se.thinkcode;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -11,11 +12,11 @@ public class CourtSteps {
     private TheCourt court = new TheCourt();
     private Integer currentTab = 0;
 
-    @Given("(Sarah) orders a meal for £{int}")
+    @Given("Sarah/Charles orders a dish/meal for £{int}")
     public void ordered_a_meal_for_(Integer price) {
         currentTab += price;
     }
-
+    
     @When("{word} swipes her card")
     public void she_swipes_her_card(String guest) {
         court.swipe(guest, currentTab);

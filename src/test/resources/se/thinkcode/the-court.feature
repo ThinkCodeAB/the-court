@@ -8,3 +8,9 @@ Feature: Buy food and beverages at The Court
     Given Sarah orders a meal for £9
     When Sarah swipes her card
     Then should Sarahs account get debited £9
+
+  Scenario: A guest buys lunch and get debited
+    Given Sarah orders a dish for £14
+    And Charles orders a dish for £9
+    When Sarah swipes her card
+    Then should Sarahs account get debited £23
