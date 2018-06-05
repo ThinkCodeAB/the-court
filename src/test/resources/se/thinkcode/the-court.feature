@@ -9,7 +9,7 @@ Feature: Buy food and beverages at The Court
     When Sarah swipes her card
     Then should Sarahs account get debited £9
 
-  Scenario: A guest buys lunch and get debited
+  Scenario: A couple orders two dishes
     Given Sarah orders a dish for £14
     And Charles orders a dish for £9
     When Sarah swipes her card
