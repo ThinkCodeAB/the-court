@@ -11,10 +11,15 @@ class TheCourt {
             currentTab = 0;
         }
 
+        if (currentTab > 50) {
+            currentTab = (int) (0.9 * currentTab);
+        }
+
         Integer balance = accounts.get(guest);
         if (balance == null) {
             balance = currentTab;
         }
+
 
         accounts.put(guest, balance);
     }

@@ -16,9 +16,9 @@ Feature: Buy food and beverages at The Court
     Then should Sarahs account get debited £23
 
   Scenario: A family orders lunch
-    Given Sarah orders a dish for £15
-    And Charles orders a dish for £14
-    And Anna orders a dish for £11
-    And Walther orders a dish for £12
+    Given Sarah orders a dish for £20
+    And Charles orders a dish for £20
+    And Anna orders a dish for £20
+    And Walther orders a dish for £20
     When Sarah swipes her card
-    Then should Sarahs account get debited £52
+    Then should Sarahs account get debited £72
