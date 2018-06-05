@@ -18,13 +18,12 @@ Feature: Buy food and beverages at The Court
     When Sarah swipes her card
     Then should Sarahs account get debited £72
 
-  Scenario: A guest should get a discount if she buys for £50
-    Given Sarah orders a dish for £50
-    When Sarah swipes her card
-    Then should Sarahs account get debited £45
+  Scenario Outline: Big spenders get 10% discount
+    Given <name> orders a dish for £<price>
+    When <name> swipes her card
+    Then should <name>s account get debited £<cost>
 
-  Scenario: A guest should not get a discount if she buys for £49
-    Given Sarah orders a dish for £49
-    When Sarah swipes her card
-    Then should Sarahs account get debited £49
-
+    Examples:
+      | name  | price | cost |
+      | Sarah | 50    | 45   |
+      | Sarah | 49    | 49   |
