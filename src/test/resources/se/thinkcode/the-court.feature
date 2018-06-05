@@ -4,6 +4,9 @@ Feature: Buy food and beverages at The Court
   Customers swipe a smart card when they get their food and beverages.
   The customers credit card is debited monthly.
 
+  Background: A background will be executed before each scenario in the current feature file
+    Given a common setup
+
   Scenario: A couple orders two dishes
     Given Sarah orders a dish for £14
     And Charles orders a dish for £9

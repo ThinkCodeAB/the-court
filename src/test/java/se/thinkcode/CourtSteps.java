@@ -1,5 +1,6 @@
 package se.thinkcode;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,6 +15,11 @@ public class CourtSteps {
 
     public CourtSteps(World world) {
         this.world = world;
+    }
+
+    @Given("a common setup")
+    public void a_common_setup() {
+        System.out.println("Hi, I'm printed from a background");
     }
 
     @Then("should {word}s account get debited £{int}")
